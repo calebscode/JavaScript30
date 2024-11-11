@@ -66,7 +66,10 @@
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
-    const sortedByLast = people.sort();
+    const sortedByLast = people.sort((a, b) => {
+      // this works for names with accents and punctuation
+      return a.split(', ')[0].localeCompare(b.split(', ')[0]);
+    });
     console.table(sortedByLast);
 
     // 8. Reduce Exercise
